@@ -27,7 +27,7 @@ function Today(props) {
         </span>
         <div>
           <h3 className="text-[#E3E5E5] opacity-50">Feels Like</h3>
-          <h4>{props.feels} </h4>
+          <h4>{props.feels} °</h4>
         </div>
       </div>
       <div className="w-full flex  items-center gap-4">
@@ -36,7 +36,7 @@ function Today(props) {
         </span>
         <div>
           <h3 className="text-[#E3E5E5] opacity-50">Visibility</h3>
-          <h4>{props.visibility} %</h4>
+          <h4>{props.visibility} </h4>
         </div>
       </div>
       <div className="w-full flex items-center gap-4">
@@ -45,7 +45,7 @@ function Today(props) {
         </span>
         <div>
           <h3 className="text-[#E3E5E5] opacity-50">Wind</h3>
-          <h4>{props.rain} km/h</h4>
+          <h4>{props.speed} km/h</h4>
         </div>
       </div>
       <div className="w-full flex  items-center gap-4">

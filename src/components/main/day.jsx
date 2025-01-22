@@ -1,6 +1,6 @@
 import Card from "../Card";
-import Today from "../main/Today";
-import Tomorrow from "../main/Tomorrow";
+import Today from "./Today";
+import Tomorrow from "./Tomorrow";
 
 function Day(props) {
   return (
@@ -22,9 +22,9 @@ function Day(props) {
 
             <div className="flex-1 flex flex-col items-center gap-10">
               <h1 className="text-9xl font-medium">{props.main}°</h1>
-              <div className="flex justify-evenly w-full">
-                <h2>{props.up}°</h2>
-                <h2>{props.down}°</h2>
+              <div className="flex justify-between w-full">
+                <h2>High: {props.up}°</h2>
+                <h2>Low: {props.down}°</h2>
               </div>
             </div>
           </div>
@@ -43,7 +43,13 @@ function Day(props) {
         />
       </div>
       <div>
-        <Tomorrow tomIcon={props.tomIcon} tomTemp={props.tomTemp} />
+        <Tomorrow
+          tomIcon={props.tomIcon}
+          tomTemp={props.tomTemp}
+          tomUp={props.tomUp}
+          tomDown={props.tomDown}
+          tomDesc={props.tomDesc}
+        />
       </div>
     </div>
   );

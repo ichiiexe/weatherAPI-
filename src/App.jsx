@@ -24,7 +24,7 @@ function App() {
   return (
     <>
       <Header />
-      <div className="h-[60dvh] flex justify-center items-center">
+      <div className="h-[60dvh] md:h-svh flex justify-center items-center">
         {dataIsLoaded ? (
           <Day
             main={items.currentConditions.temp}
@@ -41,6 +41,8 @@ function App() {
             icon={items.currentConditions.icon}
             tomIcon={items.days[1].icon}
             tomTemp={items.days[1].temp}
+            tomUp={items.days[1].tempmax}
+            tomDown={items.days[1].tempmin}
           />
         ) : (
           <h1>wait..</h1>
