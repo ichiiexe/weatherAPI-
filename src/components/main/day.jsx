@@ -1,11 +1,13 @@
 import Card from "../Card";
+import Today from "../main/Today";
+import Tomorrow from "../main/Tomorrow";
 
 function Day(props) {
   return (
-    <div className="max-w-7xl text-center grid grid-cols-3 gap-10 md:grid-cols-2">
-      <div className="row-span-2 col-span-2">
+    <div className="max-w-7xl grid grid-cols-3 gap-10 md:grid-cols-2">
+      <div className="row-span-2 col-span-2 text-center">
         <Card>
-          <div id="cardHeader">
+          <div id="cardHeader ">
             <h1>Athens</h1>
             <h5 className="">Saturday, whatever | 25:00 AM</h5>
           </div>
@@ -31,47 +33,17 @@ function Day(props) {
         </Card>
       </div>
       <div>
-        <Card>
-          <h2 className="w-full flex  items-center gap-4">
-            <span className="rounded-full p-2 bg-[#ffffff]">
-              <img src="/public/icons/Vector.png" />
-            </span>
-            {props.rain} %
-          </h2>
-          <h2 className="w-full flex items-center gap-4">
-            <span className="rounded-full p-2 bg-[#ffffff]">
-              <img src="/public/icons/droplet.png" />
-            </span>
-            {props.humid} %
-          </h2>
-          <h2 className="w-full flex items-center gap-4">
-            <span className="rounded-full p-2 px-4 bg-[#ffffff]">
-              <img src="/public/icons/Vector-1.png" />
-            </span>
-            {props.feels}°
-          </h2>
-          <h2 className="w-full flex items-center gap-4">
-            <span className="rounded-full p-[.6rem] py-[.7rem] bg-[#ffffff]">
-              <img src="/public/icons/Vector-2.png" />
-            </span>
-            {props.visibility}
-          </h2>
-          <h2 className="w-full flex items-center gap-4">
-            <span className="rounded-full p-2 bg-[#ffffff]">
-              <img src="/public/icons/wind.png" />
-            </span>
-            {props.speed} km/h
-          </h2>
-          <h2 className="w-full flex items-center gap-4">
-            <span className="rounded-full p-2 bg-[#ffffff]">
-              <img src="/public/icons/sun.png" />
-            </span>
-            {props.uv} UV Index
-          </h2>
-        </Card>
+        <Today
+          rain={props.rain}
+          humid={props.humid}
+          feels={props.feels}
+          visibility={props.visibility}
+          speed={props.speed}
+          uv={props.uv}
+        />
       </div>
       <div>
-        <Card>3</Card>
+        <Tomorrow tomIcon={props.tomIcon} tomTemp={props.tomTemp} />
       </div>
     </div>
   );

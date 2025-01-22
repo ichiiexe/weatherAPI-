@@ -39,6 +39,8 @@ function App() {
             desc={items.description}
             condition={items.currentConditions.conditions}
             icon={items.currentConditions.icon}
+            tomIcon={items.days[1].icon}
+            tomTemp={items.days[1].temp}
           />
         ) : (
           <h1>wait..</h1>
