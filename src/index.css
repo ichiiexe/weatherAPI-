@@ -6,9 +6,12 @@
 :root {
   font-size: 62.5%;
 
-  --text-normal: 1rem;
+  --text-normal: 1.2rem;
   --text-heading: 3.5rem;
-  --text-subheading: 2.1rem;
+  --text-subheading: 1.6rem;
+
+  --card-color: rgba(172, 172, 172, 0.1);
+  --card-shadow: 0px 4px 30px rgba(0, 0, 0, 0.9);
 }
 
 * {
@@ -16,15 +19,31 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: var(--text-subheading);
 }
 
 body {
   height: 100dvh;
-  background-color: black;
-  color: #919191;
+  background-color: rgb(27, 26, 26);
+  color: white;
+  background-image: url("/public/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 h1 {
   font-size: var(--text-heading);
+}
+
+h2 {
+  font-size: var(--text-subheading);
+}
+
+h4 {
+  font-size: var(--text-subheading);
+}
+
+p {
+  font-size: var(--text-normal);
 }

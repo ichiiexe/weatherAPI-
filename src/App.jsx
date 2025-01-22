@@ -5,32 +5,40 @@ import axios from "axios";
 
 function App() {
   const [items, setItems] = useState([]);
-  const [dataIsLoaded, setDataIsLoaded] = useState(true);
+  const [dataIsLoaded, setDataIsLoaded] = useState(false);
 
-  useEffect(() => {
+  const fetchData = async () => {
     axios
-      .get
-      // "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Athens?key=S48BZGXL26MK2UURT4QKZ46NT"
-      ()
+      .get(
+        "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Athens?key=S48BZGXL26MK2UURT4QKZ46NT"
+      )
       .then((res) => {
         setItems(res.data);
         setDataIsLoaded(true);
       });
+  };
+  useEffect(() => {
+    fetchData();
   }, []);
-
+  console.log(items);
   return (
     <>
       <Header />
-      <div className="h-[60dvh] p-20">
+      <div className="h-[60dvh] flex justify-center items-center">
         {dataIsLoaded ? (
           <Day
-            // up={items.days[0].tempmax}
-            // down={items.days[0].tempmin}
-            // main={items.currentConditions.temp}
-            // icon={icon}
-            up="50"
-            down="30"
-            main="40"
+            main={items.currentConditions.temp}
+            up={items.days[0].tempmax}
+            down={items.days[0].tempmin}
+            rain={items.currentConditions.precip}
+            humid={items.currentConditions.humidity}
+            feels={items.currentConditions.feelslike}
+            visibility={items.currentConditions.visibility}
+            speed={items.currentConditions.windspeed}
+            uv={items.currentConditions.uvindex}
+            desc={items.description}
+            condition={items.currentConditions.conditions}
+            icon={items.currentConditions.icon}
           />
         ) : (
           <h1>wait..</h1>
