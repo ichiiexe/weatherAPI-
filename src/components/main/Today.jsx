@@ -1,4 +1,10 @@
 import Card from "../Card";
+import Vector from "/icons/Vector.png";
+import Droplet from "/icons/droplet.png";
+import Vector1 from "/icons/Vector-1.png";
+import Vector2 from "/icons/Vector-2.png";
+import Wind from "/icons/wind.png";
+import Sun from "/icons/sun.png";
 
 function Today(props) {
   return (
@@ -8,7 +14,7 @@ function Today(props) {
       </h1>
       <div className="w-full flex  items-center gap-4">
         <span className="rounded-full p-2 bg-[#ffffff]">
-          <img src="/icons/Vector.png" />
+          <img src={Vector} />
         </span>
         <div>
           <h3 className="text-[#E3E5E5] opacity-50">Precipitation</h3>
@@ -17,7 +23,7 @@ function Today(props) {
       </div>
       <div className="w-full flex  items-center gap-4">
         <span className="rounded-full p-2 bg-[#ffffff]">
-          <img src="/icons/droplet.png" />
+          <img src={Droplet} />
         </span>
         <div>
           <h3 className="text-[#E3E5E5] opacity-50">Humidity</h3>
@@ -26,7 +32,7 @@ function Today(props) {
       </div>
       <div className="w-full flex items-center gap-4">
         <span className="rounded-full p-2 px-4 bg-[#ffffff]">
-          <img src="/icons/Vector-1.png" />
+          <img src={Vector1} />
         </span>
         <div>
           <h3 className="text-[#E3E5E5] opacity-50">Feels Like</h3>
@@ -35,7 +41,7 @@ function Today(props) {
       </div>
       <div className="w-full flex  items-center gap-4">
         <span className="rounded-full p-[.6rem] py-[.7rem] bg-[#ffffff]">
-          <img src="/icons/Vector-2.png" />
+          <img src={Vector2} />
         </span>
         <div>
           <h3 className="text-[#E3E5E5] opacity-50">Visibility</h3>
@@ -44,7 +50,7 @@ function Today(props) {
       </div>
       <div className="w-full flex items-center gap-4">
         <span className="rounded-full p-2 bg-[#ffffff]">
-          <img src="/icons/wind.png" />
+          <img src={Wind} />
         </span>
         <div>
           <h3 className="text-[#E3E5E5] opacity-50">Wind</h3>
@@ -53,7 +59,7 @@ function Today(props) {
       </div>
       <div className="w-full flex  items-center gap-4">
         <span className="rounded-full p-2 bg-[#ffffff]">
-          <img src="/icons/sun.png" />
+          <img src={Sun} />
         </span>
         <div>
           <h3 className="text-[#E3E5E5] opacity-50">UV Index</h3>

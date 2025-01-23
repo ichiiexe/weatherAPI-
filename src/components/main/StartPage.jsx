@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import Card from "../Card";
+import Arrow1 from "/arrows/Vector-3.png";
+import Arrow2 from "/arrows/Vector-2.png";
+
 function StartPage({ setCity }) {
   const [text, setText] = useState("");
 
@@ -34,12 +37,12 @@ function StartPage({ setCity }) {
           <h1 className="backgroundText">Search City</h1>
           <img
             className="absolute -top-10 left-60 rotate-12"
-            src="/arrows/Vector-3.png"
+            src={Arrow1}
             alt="arrow pointing input"
           />
           <img
             className="absolute right-20 rotate-45 -z-50 opacity-55"
-            src="/arrows/Vector-2.png"
+            src={Arrow2}
             alt="arrow pointing input"
           />
         </div>

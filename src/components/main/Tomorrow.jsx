@@ -1,4 +1,5 @@
 import Card from "../Card";
+import Arrow from "/arrows/Vector-4.png";
 
 function Tomorrow(props) {
   return (
@@ -7,13 +8,13 @@ function Tomorrow(props) {
         Tomorrow..
         <img
           className="rotate-90 absolute top-0 right-36 md:rotate-180 md:-right-20"
-          src="/public/arrows/Vector-4.png"
+          src={Arrow}
         />
       </h1>
       <div className="flex flex-row justify-between items-center w-full md:flex-col">
         <img
           className="max-w-40"
-          src={"/public/WeatherPack/" + props.tomIcon + ".png"}
+          src={"./WeatherPack/" + props.tomIcon + ".png"}
         />
         <div className="flex flex-col items-center">
           <h1 className="w-full text-center">{props.tomTemp}°</h1>
