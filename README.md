@@ -1,6 +1,6 @@
 **Weather App**
 
-A simple and intuitive weather app that provides real-time weather updates and forecasts based on user location or searched city. The app fetches weather data from [Timeline Weather API]([https://openweathermap.org/](https://www.visualcrossing.com/resources/documentation/weather-api/timeline-weather-api/)), allowing users to see temperature, humidity, wind speed, and other weather-related details. It also features dynamic weather icons that change based on the weather conditions.
+A simple and intuitive weather app that provides real-time weather updates and forecasts based on user location or searched city. The app fetches weather data from [Timeline Weather API](https://www.visualcrossing.com/resources/documentation/weather-api/timeline-weather-api/), allowing users to see temperature, humidity, wind speed, and other weather-related details. It also features dynamic weather icons that change based on the weather conditions.
 
 ### Features:
 - Real-time weather data from OpenWeatherMap API
