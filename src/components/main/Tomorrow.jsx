@@ -3,7 +3,14 @@ import Card from "../Card";
 function Tomorrow(props) {
   return (
     <Card>
-      <div className="flex flex-row justify-between items-center w-full">
+      <h1 className="backgroundText absolute -z-10 -top-20 -right-96 text-[5rem] md:top-full md:right-1/3">
+        Tomorrow..
+        <img
+          className="rotate-90 absolute top-0 right-36 md:rotate-180 md:-right-20"
+          src="/public/arrows/Vector-4.png"
+        />
+      </h1>
+      <div className="flex flex-row justify-between items-center w-full md:flex-col">
         <img
           className="max-w-40"
           src={"/public/WeatherPack/" + props.tomIcon + ".png"}

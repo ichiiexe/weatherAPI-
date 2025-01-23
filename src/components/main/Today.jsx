@@ -3,6 +3,9 @@ import Card from "../Card";
 function Today(props) {
   return (
     <Card>
+      <h1 className="backgroundText absolute -z-10 -top-20 text-[5rem]">
+        Today..
+      </h1>
       <div className="w-full flex  items-center gap-4">
         <span className="rounded-full p-2 bg-[#ffffff]">
           <img src="/public/icons/Vector.png" />

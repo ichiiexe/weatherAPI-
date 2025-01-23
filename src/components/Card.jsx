@@ -1,6 +1,6 @@
 function Card(props) {
   return (
-    <div className="bg-[--card-color] border border-[#FFF8F8] w-full h-full p-10 flex flex-col gap-6 items-center rounded-lg">
+    <div className="relative bg-[--card-color] border border-[#FFF8F8] w-full h-full p-10 flex flex-col gap-6 items-center rounded-lg">
       {props.children}
     </div>
   );

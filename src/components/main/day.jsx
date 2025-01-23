@@ -1,57 +1,92 @@
 import Card from "../Card";
 import Today from "./Today";
 import Tomorrow from "./Tomorrow";
+import { useState } from "react";
 
 function Day(props) {
-  return (
-    <div className="max-w-7xl grid grid-cols-3 gap-10 md:grid-cols-2">
-      <div className="row-span-2 col-span-2 text-center">
-        <Card>
-          <div id="cardHeader ">
-            <h1>Athens</h1>
-            <h5 className="">Saturday, whatever | 25:00 AM</h5>
-          </div>
-          <div
-            id="cardInfo"
-            className="w-full flex justify-around gap-10 items-center p-10 m-5"
-          >
-            <div className="flex-1 flex flex-col items-center">
-              <img src={"/public/WeatherPack/" + props.icon + ".png"} />
-              <p>{props.condition}</p>
-            </div>
+  const [text, setText] = useState("");
 
-            <div className="flex-1 flex flex-col items-center gap-10">
-              <h1 className="text-9xl font-medium">{props.main}°</h1>
-              <div className="flex justify-between w-full">
-                <h2>High: {props.up}°</h2>
-                <h2>Low: {props.down}°</h2>
+  function handleChange(e) {
+    setText(e.target.value);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    props.handleSubmit(text);
+  }
+  return (
+    <>
+      <div className="max-w-7xl grid grid-cols-3 gap-10 md:grid-cols-2">
+        <div className="row-span-2 col-span-2 text-center relative">
+          <Card>
+            <div id="cardHeader flex justify-center">
+              <form onSubmit={handleSubmit}>
+                <input
+                  className="h-full max-w-3/5 m-2 bg-transparent text-center focus:outline-none"
+                  placeholder={`${props.city}`}
+                  type="text"
+                  value={text}
+                  onChange={handleChange}
+                />
+              </form>
+              <h5 className="m-2">Saturday, whatever | 25:00 AM</h5>
+              <div className="absolute right-[22rem] -top-16">
+                <h1 className="backgroundText">Search</h1>
+                <img
+                  className="absolute top-16 -right-36 rotate-45"
+                  src="/public/arrows/Vector-3.png"
+                  alt="arrow pointing input"
+                />
+                <img
+                  className="absolute top-16 -left-36 rotate-90"
+                  src="/public/arrows/Vector-2.png"
+                  alt="arrow pointing input"
+                />
               </div>
             </div>
-          </div>
+            <div
+              id="cardInfo"
+              className="w-full flex justify-around gap-10 items-center p-10 m-5"
+            >
+              <div className="flex-1 flex flex-col items-center">
+                <img src={"/public/WeatherPack/" + props.icon + ".png"} />
+                <p>{props.condition}</p>
+              </div>
 
-          <footer>{props.desc}</footer>
-        </Card>
+              <div className="flex-1 flex flex-col items-center gap-10">
+                <h1 className="text-9xl font-medium">{props.main}°</h1>
+                <div className="flex justify-between w-full">
+                  <h2>High: {props.up}°</h2>
+                  <h2>Low: {props.down}°</h2>
+                </div>
+              </div>
+            </div>
+
+            <footer>{props.desc}</footer>
+          </Card>
+        </div>
+        <div>
+          <Today
+            rain={props.rain}
+            humid={props.humid}
+            feels={props.feels}
+            visibility={props.visibility}
+            speed={props.speed}
+            uv={props.uv}
+          />
+        </div>
+        <div>
+          <Tomorrow
+            tomIcon={props.tomIcon}
+            tomTemp={props.tomTemp}
+            tomUp={props.tomUp}
+            tomDown={props.tomDown}
+            tomDesc={props.tomDesc}
+          />
+        </div>
       </div>
-      <div>
-        <Today
-          rain={props.rain}
-          humid={props.humid}
-          feels={props.feels}
-          visibility={props.visibility}
-          speed={props.speed}
-          uv={props.uv}
-        />
-      </div>
-      <div>
-        <Tomorrow
-          tomIcon={props.tomIcon}
-          tomTemp={props.tomTemp}
-          tomUp={props.tomUp}
-          tomDown={props.tomDown}
-          tomDesc={props.tomDesc}
-        />
-      </div>
-    </div>
+      <div></div>
+    </>
   );
 }
 

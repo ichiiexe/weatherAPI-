@@ -2,31 +2,45 @@ import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Day from "./components/main/day";
 import axios from "axios";
+import StartPage from "./components/main/StartPage";
 
 function App() {
   const [items, setItems] = useState([]);
   const [dataIsLoaded, setDataIsLoaded] = useState(false);
+  const [city, setCity] = useState("");
 
-  const fetchData = async () => {
+  async function fetchCity(city) {
     axios
       .get(
-        "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Athens?key=S48BZGXL26MK2UURT4QKZ46NT"
+        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?key=S48BZGXL26MK2UURT4QKZ46NT`
       )
       .then((res) => {
-        setItems(res.data);
-        setDataIsLoaded(true);
+        try {
+          setItems(res.data);
+          setDataIsLoaded(true);
+        } catch {
+          console.log("bruh");
+          setDataIsLoaded(false);
+        }
       });
-  };
+  }
   useEffect(() => {
-    fetchData();
-  }, []);
+    if (city != "") {
+      fetchCity(city);
+    }
+  }, [city]);
+
+  console.log(city);
   console.log(items);
+
   return (
     <>
       <Header />
-      <div className="h-[60dvh] md:h-svh flex justify-center items-center">
-        {dataIsLoaded ? (
+      <div className="h-[60dvh] md:h-dvh md:w-full flex justify-center items-center">
+        {city != 0 && dataIsLoaded ? (
           <Day
+            handleSubmit={(city) => setCity(city)}
+            city={city}
             main={items.currentConditions.temp}
             up={items.days[0].tempmax}
             down={items.days[0].tempmin}
@@ -45,7 +59,9 @@ function App() {
             tomDown={items.days[1].tempmin}
           />
         ) : (
-          <h1>wait..</h1>
+          <div className="md:h-dvh">
+            <StartPage setCity={(newCity) => setCity(newCity)} />
+          </div>
         )}
       </div>
     </>
