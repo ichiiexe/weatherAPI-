@@ -34,12 +34,12 @@ function Day(props) {
                 <h1 className="backgroundText">Search</h1>
                 <img
                   className="absolute top-16 -right-36 rotate-45"
-                  src="/public/arrows/Vector-3.png"
+                  src="/arrows/Vector-3.png"
                   alt="arrow pointing input"
                 />
                 <img
                   className="absolute top-16 -left-36 rotate-90"
-                  src="/public/arrows/Vector-2.png"
+                  src="/arrows/Vector-2.png"
                   alt="arrow pointing input"
                 />
               </div>
@@ -49,7 +49,7 @@ function Day(props) {
               className="w-full flex justify-around gap-10 items-center p-10 m-5"
             >
               <div className="flex-1 flex flex-col items-center">
-                <img src={"/public/WeatherPack/" + props.icon + ".png"} />
+                <img src={"/WeatherPack/" + props.icon + ".png"} />
                 <p>{props.condition}</p>
               </div>
 

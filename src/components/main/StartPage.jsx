@@ -34,12 +34,12 @@ function StartPage({ setCity }) {
           <h1 className="backgroundText">Search City</h1>
           <img
             className="absolute -top-10 left-60 rotate-12"
-            src="/public/arrows/Vector-3.png"
+            src="/arrows/Vector-3.png"
             alt="arrow pointing input"
           />
           <img
             className="absolute right-20 rotate-45 -z-50 opacity-55"
-            src="/public/arrows/Vector-2.png"
+            src="/arrows/Vector-2.png"
             alt="arrow pointing input"
           />
         </div>
@@ -53,12 +53,12 @@ export default StartPage;
   <h1 className="backgroundText">Search</h1>
   <img
     className="absolute top-16 -right-36 rotate-45"
-    src="/public/arrows/Vector-3.png"
+    src="/arrows/Vector-3.png"
     alt="arrow pointing input"
   />
   <img
     className="absolute top-16 -left-36 rotate-90"
-    src="/public/arrows/Vector-1.png"
+    src="/arrows/Vector-1.png"
     alt="arrow pointing input"
   />
 </div>;

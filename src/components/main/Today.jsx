@@ -8,7 +8,7 @@ function Today(props) {
       </h1>
       <div className="w-full flex  items-center gap-4">
         <span className="rounded-full p-2 bg-[#ffffff]">
-          <img src="/public/icons/Vector.png" />
+          <img src="/icons/Vector.png" />
         </span>
         <div>
           <h3 className="text-[#E3E5E5] opacity-50">Precipitation</h3>
@@ -17,7 +17,7 @@ function Today(props) {
       </div>
       <div className="w-full flex  items-center gap-4">
         <span className="rounded-full p-2 bg-[#ffffff]">
-          <img src="/public/icons/droplet.png" />
+          <img src="/icons/droplet.png" />
         </span>
         <div>
           <h3 className="text-[#E3E5E5] opacity-50">Humidity</h3>
@@ -26,7 +26,7 @@ function Today(props) {
       </div>
       <div className="w-full flex items-center gap-4">
         <span className="rounded-full p-2 px-4 bg-[#ffffff]">
-          <img src="/public/icons/Vector-1.png" />
+          <img src="/icons/Vector-1.png" />
         </span>
         <div>
           <h3 className="text-[#E3E5E5] opacity-50">Feels Like</h3>
@@ -35,7 +35,7 @@ function Today(props) {
       </div>
       <div className="w-full flex  items-center gap-4">
         <span className="rounded-full p-[.6rem] py-[.7rem] bg-[#ffffff]">
-          <img src="/public/icons/Vector-2.png" />
+          <img src="/icons/Vector-2.png" />
         </span>
         <div>
           <h3 className="text-[#E3E5E5] opacity-50">Visibility</h3>
@@ -44,7 +44,7 @@ function Today(props) {
       </div>
       <div className="w-full flex items-center gap-4">
         <span className="rounded-full p-2 bg-[#ffffff]">
-          <img src="/public/icons/wind.png" />
+          <img src="/icons/wind.png" />
         </span>
         <div>
           <h3 className="text-[#E3E5E5] opacity-50">Wind</h3>
@@ -53,7 +53,7 @@ function Today(props) {
       </div>
       <div className="w-full flex  items-center gap-4">
         <span className="rounded-full p-2 bg-[#ffffff]">
-          <img src="/public/icons/sun.png" />
+          <img src="/icons/sun.png" />
         </span>
         <div>
           <h3 className="text-[#E3E5E5] opacity-50">UV Index</h3>
