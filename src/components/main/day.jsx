@@ -1,6 +1,7 @@
 import Card from "../Card";
 import Today from "./Today";
 import Tomorrow from "./Tomorrow";
+import Week from "./Week";
 import Arrow1 from "/arrows/Vector-3.png";
 import Arrow2 from "/arrows/Vector-2.png";
 import { useState } from "react";
@@ -86,8 +87,10 @@ function Day(props) {
             tomDesc={props.tomDesc}
           />
         </div>
+        <div className="col-span-3">
+          <Week array={props.week} />
+        </div>
       </div>
-      <div></div>
     </>
   );
 }
