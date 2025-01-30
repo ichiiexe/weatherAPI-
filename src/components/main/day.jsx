@@ -19,7 +19,7 @@ function Day(props) {
   }
   return (
     <>
-      <div className="max-w-7xl grid grid-cols-3 gap-10 md:grid-cols-2">
+      <div className="grid grid-cols-3 gap-10">
         <div className="row-span-2 col-span-2 text-center relative">
           <Card>
             <div id="cardHeader flex justify-center">
