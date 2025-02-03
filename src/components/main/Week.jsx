@@ -1,4 +1,5 @@
 import Card from "../Card";
+import { motion } from "framer-motion";
 
 function Week(props) {
   const myArray = props.array;
@@ -13,7 +14,12 @@ function Week(props) {
         const date = item.datetime.split("-");
 
         return (
-          <div className="flex flex-col items-center">
+          <motion.div
+            className="flex flex-col items-center"
+            initial={{ opacity: 0, translateY: -10 }}
+            animate={{ opacity: 1, translateY: 0 }}
+            transition={{ delay: index / 3 }}
+          >
             <h2>{date[1] + "/" + date[2]}</h2>
             <Card key={index}>
               <img
@@ -22,7 +28,7 @@ function Week(props) {
               />
               <h2>{item.temp}</h2>
             </Card>
-          </div>
+          </motion.div>
         );
       })}
     </div>

@@ -5,6 +5,7 @@ import Week from "./Week";
 import Arrow1 from "/arrows/Vector-3.png";
 import Arrow2 from "/arrows/Vector-2.png";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 function Day(props) {
   const [text, setText] = useState("");
@@ -20,7 +21,12 @@ function Day(props) {
   return (
     <>
       <div className="grid grid-cols-3 gap-10">
-        <div className="row-span-2 col-span-2 text-center relative">
+        <motion.div
+          className="row-span-2 col-span-2 text-center relative"
+          initial={{ opacity: 0, translateX: -150 }}
+          animate={{ opacity: 1, translateX: 0 }}
+          transition={{ duration: 1 }}
+        >
           <Card>
             <div id="cardHeader flex justify-center">
               <form onSubmit={handleSubmit}>
@@ -67,8 +73,12 @@ function Day(props) {
 
             <footer>{props.desc}</footer>
           </Card>
-        </div>
-        <div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, translateX: 150 }}
+          animate={{ opacity: 1, translateX: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
           <Today
             rain={props.rain}
             humid={props.humid}
@@ -77,8 +87,12 @@ function Day(props) {
             speed={props.speed}
             uv={props.uv}
           />
-        </div>
-        <div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, translateX: 150 }}
+          animate={{ opacity: 1, translateX: 0 }}
+          transition={{ duration: 1, delay: 1 }}
+        >
           <Tomorrow
             tomIcon={props.tomIcon}
             tomTemp={props.tomTemp}
@@ -86,7 +100,7 @@ function Day(props) {
             tomDown={props.tomDown}
             tomDesc={props.tomDesc}
           />
-        </div>
+        </motion.div>
         <div className="col-span-3">
           <Week array={props.week} />
         </div>
